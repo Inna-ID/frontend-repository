@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #e8e0ff;
+  color: #333;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+hr {
+  border: 2px;
+}
+.test-text {
+  border: 2px solid silver;
+}
+.test-text .sp1 {
+  font-weight: bold;
+}
+.test-text .sp2 {
+  color: firebrick;
+}
+p:nth-child(3) {
+  padding: 15px;
+  font-style: italic;
+  font-weight: bold;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}

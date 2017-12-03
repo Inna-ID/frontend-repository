@@ -1,0 +1,38 @@
+@bg-color: #cce6ff;
+@main-font-color: #333;
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: spin(@bg-color, 40) + 20;
+	color: @main-font-color;
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+}
+
+hr {
+	border: 2px;
+}
+
+.test-text {
+	border: 2px solid silver;
+
+	.sp1 {
+		font-weight: bold;
+	}
+	.sp2 {
+		color: firebrick;
+	}
+}
+p:nth-child(3){
+	padding: 15px;
+	font-style: italic;
+	font-weight: bold;
+	box-shadow: 0 0 10px rgba(0,0,0,0.5)
+}
