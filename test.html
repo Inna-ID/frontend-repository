@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/main.css">
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script> 
+</head>
+<body>
+	<input type="number" id="number-inp">
+	<button id="magic-button">Push</button>
+	<div class="content"></div>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+	outline: 0;
+}
+
+#number-inp {
+	max-width: 150px;
+	border: 1px solid #333;
+	border-radius: 5px;
+	padding: 3px 10px;
+	margin: 20px;
+}
+
+
+#magic-button{
+	padding: 6px 20px;
+	border-radius: 5px;
+}
+
+.content{
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.item{
+	min-height: 100px;
+	background: #ccc;
+	display: flex;
+	justify-content: space-around;
+    align-items: center;
+	flex: 0 1 calc(20% - 10px);
+	margin: 5px;
+}
+
+@media screen and (max-width:1024px) {
+	.item{
+		flex: 0 1 calc(50% - 10px);
+	}
+}
+
+@media screen and (max-width:480px) {
+    .content{flex-direction: column;}
+}
+
+
+/*    Styles for IE     */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+   .item{
+    flex: 0 1 19%;
+    margin: 5px;
+    }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (max-width:1024px){
+   .item{
+    flex: 0 1 48.5%;
+    margin: 5px;
+    }
+}
+
+
+</style>
+ 	<script>
+  (function ($) {
+	$(document).ready(function () {
+
+		$('#magic-button').click(function(){
+			$('.content').empty();
+			var number = $('#number-inp').val();
+			var numberArray = [];
+			
+			for(var i = 1; i <= number; i++){
+				numberArray.push(i);
+			}
+
+			for(var i = 0; i < numberArray.length; i++){
+				$('.content').append('<div class="item">');
+
+				if(numberArray[i] % 2 == 0 && numberArray[i] % 3 == 0){
+				numberArray[i] = 'foobar'
+				}
+				else if(numberArray[i] % 2 == 0){
+					numberArray[i] = 'foo';
+				}
+				 else if(numberArray[i] % 3 == 0){
+					numberArray[i] = 'bar';
+				}
+			}
+				var item = $('.item');
+				for(var i = 0; i < item.length; i++){
+					item[i].innerHTML = numberArray[i];
+				}
+		});
+	});
+})(jQuery);
+  </script>
+</body>
+</html>
