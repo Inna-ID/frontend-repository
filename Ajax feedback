@@ -45,3 +45,5 @@ mail($recepient, $pagetitle, $message, "Content-type: text/plain; charset=\"utf-
 
 
 /////^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$
+////my
+////(\+)?(\d{2,3})?(\s|-)?(\d{9}|(\()?\d{2}(\))?(\s|-)?\d{3}(\s|-)?\d{2}(\s|-)?\d{2})
