@@ -80,7 +80,54 @@
  	<script>
   (function ($) {
 	$(document).ready(function () {
+		
+	//////////
+	///header fixed
+        function lpHeader() {
+            if ($(window).scrollTop() == 0) {
+                $('header').addClass('top');
+            } else {
+                $('header.top').removeClass('top');
+            }
+        }
+        lpHeader();
+        $(window).on('scroll', lpHeader);
 
+        var lpNav = $('header ul');
+        lpNav.find('li a').on('click', function (e) {
+            e.preventDefault();
+
+            var linkTrgt = $($(this).attr('href'));
+            var sectionOffset = linkTrgt.data('offset');
+
+            if (linkTrgt.length > 0) {
+                var offset = linkTrgt.offset().top; //храним отступ
+                $('body, html').animate({
+                    scrollTop: offset - sectionOffset
+                }, 1000);
+            }
+        });
+
+        function lpSetNavActive() {
+            var curItem = '';
+            $('section').each(function () {
+                if ($(window).scrollTop() > $(this).offset().top - 100) {
+                    curItem = $(this).attr('id');
+                }
+            });
+            if (lpNav.find('li.active a').attr('href') != '#' + curItem || lpNav.find('li.active').length == 0) {
+
+                lpNav.find('li.active').removeClass('active');
+                lpNav.find('li a[href="#' + curItem + '"]').parent().addClass('active');
+            }
+        }
+        lpSetNavActive();
+        $(window).on('scroll', lpSetNavActive);
+	///////////
+		
+		
+		
+		
 		$('#magic-button').click(function(){
 			$('.content').empty();
 			var number = $('#number-inp').val();
