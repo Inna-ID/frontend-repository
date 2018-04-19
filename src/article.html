@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Главная</title>
+	<link rel="stylesheet" href="css/fontawesome.css">
+	<link rel="stylesheet" href="css/main.css">
+	<script src="js/libs.min.js"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+	<script src="js/main.js"></script>
+</head>
+<body>
+	<header>		
+		<div class="icon-menu">
+			<!-- <i class="fas fa-bars"></i>-->
+			<img src="img/menu-ham-white.svg" alt="">
+		</div>
+		<div class="menu">	
+				<div class="icon-close">
+					<!-- <i class="fas fa-times-octagon"></i> -->
+					<img src="img/close-white.svg" alt="">
+				</div>
+			<!-- <input type="checkbox" id="menuCheckbox">-->
+				<ul class="nav">
+					<li><a href="index.html">Главная</a></li>
+					<li><a href="">Один</a></li>
+					<li><a href="">Два</a></li>
+					<li><a href="about.html">About blog</a></li>
+				</ul>
+		</div>
+		<div class="logo">Lorem ipsum</div>
+	</header>
+
+	<div class="container">
+		<div class="overlay-bg"></div>
+		<div class="article-content">
+			<h1 class="article__title">Фиксы CSS</h1>
+			<div class="article__title-meta">Tagged in <span class="title__category">CSS 3</span> • <span class="title__date">19 Апр, 2018</span></div>
+			<p>В ходе верстки нередко встречаются различные баги. Иногда это зависит от браузера или его версии.
+			Здесь буду собирать баги, с которыми мне довелось столкнуться и приводить примеры их решения.</p>
+			<h4 class="article__subtitle">Дергание фиксированного блока при прокрутке колесом мышки, либо стрелками.</h4>
+			<p>Допустим есть фиксированный header. Это похоже на плавающий баг, ибо иногда при прокрутке страницы хедер начинает колбасить</p>
+			<p>Решить проблему в некотором случае можно добавив блоку <b>transform: translateZ(0);</b></p>
+
+			<!-- <pre>				
+				<code>
+					<span class="tech">HTML</span>
+					<span class="comment">//efgeefef</span>
+					<span class="bracket">&lt;<span class="tag">header</span> <span class="attr">class</span>="<span class="val">head</span>"&gt;</span>			
+						<span class="text-in-code">text texjhffgf</span>
+					<span class="bracket">&lt;/<span class="tag">header</span>&gt;</span>
+				</code>
+			</pre> -->
+<pre>			
+<code>
+	<span class="tech">css</span>
+	<span class="bracket">
+	<span class="comment">//efgeefef</span>
+	<span class="tag">header</span> {
+	   <span class="attr">-webkit-transform</span>: <span class="val">translateZ(0)</span>;
+	   <span class="attr">transform</span>: <span class="val">translateZ(0)</span>;
+	}
+	</span>
+</code>
+</pre>
+
+		</div>
+	</div>
+</body>
+</html>
